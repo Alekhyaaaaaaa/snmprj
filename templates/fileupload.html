@@ -1,0 +1,35 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+    <style>
+        form{
+            border: 1px solid black;
+            border-radius: 15px;
+            margin-left: 33%;
+            margin-right: 33%;
+            margin-top: 9%;
+            padding: 15px;
+            background-color: rgba(200, 0, 255, 0.852);
+        }
+        button{
+            background-color: rgb(149, 2, 189);
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: rgb(98, 0, 126);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <form action="{{url_for('fileupload')}}" enctype="multipart/form-data" method="post">
+            Upload a file: <br><br>
+        <input type="file" name="file"><br><br>
+        <button>Submit</button>
+    </form>
+    </center>
+</body>
+{% endblock %}

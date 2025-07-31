@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page of Simple Notes Management System</title>
+    
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}    
+    {% for message in messages %}
+      <center><mark>{{ message }}</mark></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <center>
+        <h1>
+            Register Page
+        </h1>
+        <h1>Simple Notes Management System</h1>
+        <div class="div">
+            <div class="div1">
+                <img src="{{url_for('static', filename='notes1.jpg')}}" align="middle" alt="" width="260px"
+                    height="300px">
+            </div>
+            <div class="div2">
+                <form action="" method="post">
+
+                    <label for=""> Enter Email Id:</label>
+                    <input type="email" name="email" id="">
+                    <label for="">Enter User Name: </label>
+                    <input type="text" name="username">
+                    <label for="">Enter Password: </label>
+                    <input type="password" name="password" id="" class="last">
+                     <label for="">Enter Gender: </label>
+                    <!--<input type="text" name="gender" id=""> -->
+                    <select name="gender" id="gender" style="width: 300px;">
+                        <option value="">Select an Option</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <button style="width: 140px; margin-top: 17px;" class="btn">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </center>
+
+
+</body>
+
+</html>

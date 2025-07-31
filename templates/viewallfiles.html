@@ -1,0 +1,63 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<body>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>File_ID</th>
+                    <th>File Name</th>
+                    <th>Created_at</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in files_data %}
+                <tr>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td><a href="{{url_for('viewfile',fid=i[0])}}">View</a>
+                        <a href="{{url_for('downloadfile',fid=i[0])}}">Download</a>
+                        <a href="{{url_for('deletefile',fid=i[0])}}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+</body>
+{% endblock %}
